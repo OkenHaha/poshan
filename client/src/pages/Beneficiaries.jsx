@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const token = "3f2504e0-4f89-11ed-a861-0242ac120002"
+
+const api = axios.create({
+  baseURL: 'https://poshan-tau.vercel.app',
+  headers: {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  }
+});
+
 function Beneficiaries() {
   const [beneficiaries, setBeneficiaries] = useState([]);
   const [newBeneficiary, setNewBeneficiary] = useState({

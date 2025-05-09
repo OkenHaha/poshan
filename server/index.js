@@ -5,7 +5,13 @@ const cors = require('cors');
 const app = express();
 
 // ... other middleware ...
-app.use(cors()); // Enable CORS for all routes
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://poshan-u53m.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
@@ -17,7 +23,6 @@ mongoose.connect(process.env.MONGODB_URI)
 // Define schemas
 const beneficiarySchema = new mongoose.Schema({
   name: String,
-  category: String,
   gender: String,
   dob: Date
 });

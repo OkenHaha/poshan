@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Beneficiaries from './pages/Beneficiaries';
@@ -5,8 +6,9 @@ import HealthStatus from './pages/HealthStatus';
 import axios from 'axios';
 
 // Set up axios defaults
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
-axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`;
+const token = "3f2504e0-4f89-11ed-a861-0242ac120002"
+axios.defaults.baseURL = "https://poshan-tau.vercel.app/"
+axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 function App() {
   return (

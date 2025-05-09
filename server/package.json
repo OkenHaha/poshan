@@ -4,7 +4,8 @@
   "description": "API for custom poshan app",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "nodemon index.js",
+    "build": "react-app-rewired build"
   },
   "author": "OkenK",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "nodemon": "^2.0.14",
     "mongoose": "^8.14.2"
   }
 }
